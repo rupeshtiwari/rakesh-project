@@ -1,13 +1,4 @@
-// interface no coding, constant, data structure, enums 
-
-interface BidPackageTemplate {
-    title: string;
-    controls: JsonFormControl[];
-}
-
-
-
-interface JsonFormControl {
+export interface BidPackageFormUiControl {
     associatedControlName: string;
     source: string;
     fieldname: string;
@@ -15,7 +6,7 @@ interface JsonFormControl {
     controlType: string;
     splitText: string;
     options: string[];
-    chachastyles: {
+    styles: {
         visible: true;
     };
 }
