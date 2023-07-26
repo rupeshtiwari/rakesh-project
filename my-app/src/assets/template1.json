@@ -1,0 +1,94 @@
+[
+    {
+        "value": "Insulation work",
+        "key": "InsulationHeader",
+        "associatedControlKeys": [],
+        "label": "",
+        "required": false,
+        "order": 1,
+        "controlType": "sectionheader",
+        "type": "",
+        "options": [],
+        "styles": {
+            "isVisible": true
+        }
+    },
+    {
+        "key": "Free Text",
+        "associatedControlKeys": [],
+        "label": "Free Text",
+        "required": false,
+        "order": 1,
+        "controlType": "textbox",
+        "type": "",
+        "options": [],
+        "styles": {
+            "isVisible": true
+        }
+    },
+    {
+        "value": "Scafolding work",
+        "key": "Scafolding",
+        "associatedControlKeys": [],
+        "label": "",
+        "required": false,
+        "order": 1,
+        "controlType": "sectionheader",
+        "type": "",
+        "options": [],
+        "styles": {
+            "isVisible": true
+        }
+    },
+    {
+        "key": "workOrderId",
+        "associatedControlKeys": [],
+        "label": "Work Order ID",
+        "required": false,
+        "order": 1,
+        "controlType": "textbox",
+        "type": "",
+        "options": [],
+        "styles": {
+            "isVisible": true
+        }
+    },
+    {
+        "key": "beamNeeded",
+        "associatedControlKeys": [
+            "weightOfBeam"
+        ],
+        "label": "Beam Needed",
+        "required": false,
+        "order": 1,
+        "controlType": "radio",
+        "type": "",
+        "options": [
+            {
+                "key": "yes",
+                "value": "Yes"
+            },
+            {
+                "key": "no",
+                "value": "No"
+            }
+        ],
+        "styles": {
+            "isVisible": true
+        }
+    },
+    {
+        "key": "weightOfBeam",
+        "associatedControlKeys": [],
+        "label": "Weight of Beam",
+        "required": false,
+        "order": 1,
+        "controlType": "textbox",
+        "type": "",
+        "options": [],
+        "styles": {
+            "isVisible": true
+        },
+        "isHidden": true
+    }
+]

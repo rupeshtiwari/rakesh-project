@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 
 import { BidPackageDialogComponent } from './components/bid-package-dialog/bid-package-dialog.component';
 import { AppComponent } from './components/root/app.component';
@@ -31,6 +32,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatDialogModule,
     MatRadioModule,
+    MatCardModule,
     MatSelectModule,
     HttpClientModule,
   ],

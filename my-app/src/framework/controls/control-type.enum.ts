@@ -6,4 +6,5 @@ export enum ControlTypeEnum {
     checkbox = 'checkbox',
     datepicker = 'datepicker',
     textarea = 'textarea', // Added textarea type
+    sectionheader = 'sectionheader', // Added textarea type
 }

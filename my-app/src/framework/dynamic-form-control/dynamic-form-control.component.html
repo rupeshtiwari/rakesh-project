@@ -8,11 +8,12 @@
         </ng-container>
 
         <ng-container *ngSwitchCase="'sectionheader'">
+            <label style="font-weight: bold; color: red;">{{control.value}}</label>
         </ng-container>
 
         <ng-container *ngSwitchCase="'pagedivider'">
         </ng-container>
-
+        
 
         <ng-container *ngSwitchCase="'radio'">
             <label [attr.for]="control.key">{{control.label}}</label>

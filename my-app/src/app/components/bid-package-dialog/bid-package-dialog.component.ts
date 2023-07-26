@@ -1,8 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormGroup, FormControl, AbstractControl } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
-import { KeyValue } from '@angular/common'; // Import KeyValue
 import { BaseControl } from '../../../framework/controls/base-control';
 
 
@@ -27,6 +26,9 @@ export class BidPackageDialogComponent {
     // Handle form submission if needed
     console.log('Form submitted!');
     // Close the dialog after form submission (optional)
-    this.dialogRef.close();
+
+    console.log(this.dynamicForm.value);
+
+   // this.dialogRef.close();
   }
 }

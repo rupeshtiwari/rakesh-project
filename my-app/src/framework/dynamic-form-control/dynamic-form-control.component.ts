@@ -30,5 +30,4 @@ export class DynamicFormControlComponent {
       control.isHidden = val;
     });
   }
-
 }

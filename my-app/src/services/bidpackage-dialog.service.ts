@@ -17,8 +17,9 @@ export class BidPackageDialogService {
 
     openDialogWithData(): void {
         this.getBidPackageFormGroupService.getFormGroup().subscribe((formGroup) => {
-           
+
             const dialogRef = this.dialog.open(BidPackageDialogComponent, {
+                disableClose: true,
                 width: '600px',
                 data: [formGroup, this.getBidPackageFormGroupService.controls],
             });
