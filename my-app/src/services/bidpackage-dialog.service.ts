@@ -1,19 +1,32 @@
-// bid-package-dialog.service.ts
+// bidpackage-dialog.service.ts
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { BidPackageDialogComponent } from '../app/components/bid-package-dialog/bid-package-dialog.component';
-import { BidPackageApi } from '../apis/bidpackage.api';
 
+import { GetBidPackageFormGroupService } from './get-bidpackage-formgroup.service';
+import { BidPackageDialogComponent } from '../app/components/bid-package-dialog/bid-package-dialog.component';
 
 @Injectable({
     providedIn: 'root',
 })
 export class BidPackageDialogService {
-    constructor(private dialog: MatDialog, private bidPackageApi: BidPackageApi) { }
- 
+    constructor(
+        private dialog: MatDialog,
+        private getBidPackageFormGroupService: GetBidPackageFormGroupService,
+
+    ) { }
+
     openDialogWithData(): void {
-        // Make the HTTP call to fetch data using BidPackageApi
-        // data = formgroupservice.getdatat();
-        // dialogopen(data)
+        this.getBidPackageFormGroupService.getFormGroup().subscribe((formGroup) => {
+           
+            const dialogRef = this.dialog.open(BidPackageDialogComponent, {
+                width: '600px',
+                data: [formGroup, this.getBidPackageFormGroupService.controls],
+            });
+
+            dialogRef.afterClosed().subscribe((result) => {
+                // Handle any actions after the dialog is closed if needed
+                console.log('Dialog closed with result:', result);
+            });
+        });
     }
 }

@@ -12,9 +12,11 @@ import { GetBidPackageControlService } from './get-bidpackage-controls.service';
 })
 export class GetBidPackageFormGroupService {
     constructor(
-        private formBuilder: FormBuilder,
+
         private getBidPackageControlService: GetBidPackageControlService
     ) { }
+
+    controls: BaseControl<string>[] = [];
 
     getFormGroup(): Observable<FormGroup> {
         return this.getBidPackageControlService.getBidPackageControls().pipe(
@@ -26,6 +28,8 @@ export class GetBidPackageFormGroupService {
                         ? new FormControl(control.value || '', Validators.required)
                         : new FormControl(control.value || '');
                 }
+
+                this.controls = controls;
 
                 return new FormGroup(group);
             })

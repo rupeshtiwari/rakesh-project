@@ -1,0 +1,38 @@
+<!-- dynamic-form-control.component.html -->
+<div [formGroup]="form">
+
+
+    <div [ngSwitch]="control.controlType">
+
+        <ng-container *ngSwitchCase="'pageheader'">
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'sectionheader'">
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'pagedivider'">
+        </ng-container>
+
+
+        <ng-container *ngSwitchCase="'radio'">
+            <label [attr.for]="control.key">{{control.label}}</label>
+            <mat-radio-group [formControlName]="control.key" [id]="control.key">
+                <mat-radio-button *ngFor="let option of control.options" [value]="option.key"
+                    (change)="onRadioButtonChanged($event)">{{ option.value }}</mat-radio-button>
+            </mat-radio-group>
+            
+        </ng-container>
+
+        <!-- Show the associated input when the associated radio button is 'yes' -->
+        <ng-container *ngSwitchCase="'textbox'">
+            <ng-container>
+                <label [hidden]="control.isHidden" [attr.for]="control.key">{{control.label}}</label>
+                <input [hidden]="control.isHidden" [formControlName]="control.key" [id]="control.key"
+                    [type]="control.type">
+            </ng-container>
+        </ng-container>
+
+    </div>
+
+    <div class="errorMessage" *ngIf="!isValid">{{control.label}} is required</div>
+</div>

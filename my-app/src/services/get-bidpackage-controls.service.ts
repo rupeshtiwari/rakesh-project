@@ -7,46 +7,43 @@ import { TextboxControl } from '../framework/controls/text-control';
 import { BaseControl } from '../framework/controls/base-control';
 import { ControlTypeEnum } from '../framework/controls/control-type.enum';
 
- 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class GetBidPackageControlService {
-    // API endpoint URL
-    private apiUrl = 'https://your-server-url.com/api/bidpackages';
+  // API endpoint URL
+  private apiUrl = 'https://your-server-url.com/api/bidpackages';
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-    getBidPackageControls(): Observable<BaseControl<string>[]> {
-        // get json from backend
+  getBidPackageControls(): Observable<BaseControl<string>[]> {
+    // get json from backend
 
-        // json = api.fetchData() //http
+    // json = api.fetchData() //http
 
-        return of([
-            new TextboxControl({
-                key: 'workOrderId',
-                label: 'Work Order ID',
-                required: true,
-                
-                order: 1,
-            }),
-            new RadioControl({
-                key: 'beamNeeded',
-                label: 'Beam Needed',
-                required: true,
-                order: 2,
-                options: [
-                    { key: 'yes', value: 'Yes' },
-                    { key: 'no', value: 'No' },
-                ],
-            }),
-            
-            new TextboxControl({
-                key: 'weightOfBeam',
-                label: 'Weight of Beam',
-                required: true,
-                order: 3,
-            }),
-        ]);
-    }
+    return of([
+      new TextboxControl({
+        key: 'workOrderId',
+        label: 'Work Order ID',
+        order: 1,
+      }),
+      new RadioControl({
+        key: 'beamNeeded',
+        label: 'Beam Needed',
+        associatedControlKeys: ['weightOfBeam'],
+        order: 2,
+        options: [
+          { key: 'yes', value: 'Yes' },
+          { key: 'no', value: 'No' },
+        ],
+      }),
+
+      new TextboxControl({
+        key: 'weightOfBeam',
+        label: 'Weight of Beam',
+        isHidden: true,
+        order: 3,
+      }),
+    ]);
+  }
 }

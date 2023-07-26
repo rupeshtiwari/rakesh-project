@@ -1,17 +1,15 @@
-// work-order.component.ts
+// workorder.component.ts
 import { Component } from '@angular/core';
 import { BidPackageDialogService } from '../../../services/bidpackage-dialog.service';
- 
 
 @Component({
-  selector: 'app-work-order',
-  templateUrl: './work-order.component.html',
-  styleUrls: ['./work-order.component.css'],
+  selector: 'app-workorder',
+  templateUrl: './work-order-page.component.html',
 })
-export class WorkOrderComponent {
+export class WorkOrderPageComponent {
   constructor(private bidPackageDialogService: BidPackageDialogService) { }
 
-  openBidPackageDialog(): void {
-    this.bidPackageDialogService.openDialog();
+  openBidPackageDialog() {
+    this.bidPackageDialogService.openDialogWithData();
   }
 }
