@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormGroup } from '@angular/forms';
 
 import { BaseControl } from '../../../framework/controls/base-control';
+import { BidPackageSubmitService } from '../../../services/bidpackage-submit.service';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class BidPackageDialogComponent {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: [FormGroup, BaseControl<string>[]],
-    public dialogRef: MatDialogRef<BidPackageDialogComponent>
+    public dialogRef: MatDialogRef<BidPackageDialogComponent>,
+    private submitPayloadService : BidPackageSubmitService,
   ) {
     this.dynamicForm = data[0];
     this.controls = data[1];
@@ -26,6 +28,8 @@ export class BidPackageDialogComponent {
     // Handle form submission if needed
     console.log('Form submitted!');
     // Close the dialog after form submission (optional)
+
+    this.submitPayloadService.submit(this.dynamicForm.value, this.controls);
 
     console.log(this.dynamicForm.value);
 

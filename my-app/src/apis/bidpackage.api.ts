@@ -18,8 +18,8 @@ export class BidPackageApi {
     constructor(private http: HttpClient) { }
 
     fetchData(): Observable<BaseControl<string>[]> {
-        // return this.http.get<BaseControl<string>[]>(this.apiUrl);
+         return this.http.get<BaseControl<string>[]>(this.apiUrl);
 
-       return of(BuilderForTemplateJson.getTemplate1());
+      // return of(BuilderForTemplateJson.getTemplate1());
     }
 }

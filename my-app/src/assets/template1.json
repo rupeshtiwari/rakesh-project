@@ -14,7 +14,7 @@
         }
     },
     {
-        "key": "Free Text",
+        "key": "FreeText",
         "associatedControlKeys": [],
         "label": "Free Text",
         "required": false,
@@ -24,7 +24,8 @@
         "options": [],
         "styles": {
             "isVisible": true
-        }
+        },
+        "value": "rupesh"
     },
     {
         "value": "Scafolding work",
@@ -51,7 +52,8 @@
         "options": [],
         "styles": {
             "isVisible": true
-        }
+        },
+        "value": "985"
     },
     {
         "key": "beamNeeded",
@@ -61,6 +63,7 @@
         "label": "Beam Needed",
         "required": false,
         "order": 1,
+        "value": "yes",
         "controlType": "radio",
         "type": "",
         "options": [
@@ -89,6 +92,7 @@
         "styles": {
             "isVisible": true
         },
-        "isHidden": true
+        "value": "80",
+        "isHidden": false
     }
 ]
